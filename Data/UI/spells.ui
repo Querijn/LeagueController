@@ -1,0 +1,6 @@
+<Skerm Namespace="LoadedTextNamespace" Version="v0.1">
+  <Container Name="SpellContainer" Width="100%" Height="100%" Anchor="center" Color="0">
+    <Text Name="Title" Content="" Anchor="middle, center" FontSize="4h" FontFile="data/fonts/arial.ttf"/>
+  </Container>
+
+</Skerm>

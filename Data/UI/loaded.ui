@@ -1,0 +1,6 @@
+<Skerm Namespace="LoadedTextNamespace" Version="v0.1">
+  <Container Name="LoadedText" Width="100%" Height="100%" Anchor="center" Color="0">
+    <Text Name="Text" Content="LeagueController is loaded." Anchor="left" FontSize="22" FontFile="data/fonts/arial.ttf"/>
+  </Container>
+
+</Skerm>

@@ -1,0 +1,5 @@
+#pragma once
+
+{{#Files}}
+#include <{{{Header}}}>
+{{/Files}}

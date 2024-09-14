@@ -1,0 +1,2 @@
+<Struct Name="MathDivisionToken" Extends="MathBaseToken" As="Skerm::DivisionToken" AsHeader="skerm/tokens.hpp">
+</Struct>

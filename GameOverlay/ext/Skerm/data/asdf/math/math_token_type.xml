@@ -1,0 +1,9 @@
+<Enum Name="MathTokenType">
+  <Item Name="MultiplicationTokenType" Value="0" />
+  <Item Name="DivisionTokenType" />
+  <Item Name="AdditionTokenType" />
+  <Item Name="SubtractionTokenType" />
+  <Item Name="ValueVariableTokenType" />
+  <Item Name="EquationTokenType" />
+  <Item Name="StructTokenType" />
+</Enum>

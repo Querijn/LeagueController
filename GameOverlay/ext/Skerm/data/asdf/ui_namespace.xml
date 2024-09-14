@@ -1,0 +1,5 @@
+<Struct Name="UINamespace">
+  <Item Name="Name" Type="String" />
+  <Item Name="Elements" Type="UIContainer" IsArray="true" IsPointer="true" />
+  <Item Name="Count" Type="uint32_t" IsArrayCountFor="Elements" />
+</Struct>

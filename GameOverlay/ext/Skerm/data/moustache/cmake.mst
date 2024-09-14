@@ -1,0 +1,25 @@
+cmake_minimum_required(VERSION 3.5)
+project(SkermInterpreter)
+
+set(SKERM_INTERPRETER_SRCS "" CACHE INTERNAL "Skerm interpreter sources")
+function(ADD_SRC var folder inc src)
+	source_group(${folder} FILES ${inc} ${src})
+	set(${var} ${${var}} ${inc} ${src} CACHE INTERNAL "" FORCE)
+endfunction(ADD_SRC)
+
+# Generated files
+ADD_SRC(SKERM_INTERPRETER_SRCS "Types"		"inc/skerm/base_types.hpp"					"src/skerm/base_types.cpp")
+ADD_SRC(SKERM_INTERPRETER_SRCS "ASDF"		"inc/skerm/asdf_interpreter.hpp"			"src/skerm/asdf_interpreter.cpp")
+{{#Files}}
+ADD_SRC(SKERM_INTERPRETER_SRCS "Data"		"inc/{{{Header}}}"			"src/{{{Source}}}")
+{{/Files}}
+
+add_library(SkermInterpreter STATIC ${SKERM_INTERPRETER_SRCS})
+
+target_include_directories(SkermInterpreter PUBLIC inc)
+target_include_directories(SkermInterpreter PRIVATE src)
+target_link_libraries(SkermInterpreter SkermMathParser)
+
+set_target_properties(SkermInterpreter PROPERTIES
+	CXX_STANDARD 17
+	CXX_EXTENSIONS OFF)

@@ -1,0 +1,5 @@
+<Struct Name="UIText" Extends="UIContainer">
+  <Item Name="Content" Type="String" />
+  <Item Name="FontFile" Type="String" />
+  <Item Name="FontSize" Type="MathEquationToken" />
+</Struct>

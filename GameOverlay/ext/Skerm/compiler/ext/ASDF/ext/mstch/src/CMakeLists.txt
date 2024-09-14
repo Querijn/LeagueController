@@ -1,0 +1,15 @@
+set(mstch_SOURCES
+    ${CMAKE_CURRENT_LIST_DIR}/state/in_section.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/state/outside_section.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/state/render_state.hpp
+    ${CMAKE_CURRENT_LIST_DIR}/visitor/get_token.hpp
+    ${CMAKE_CURRENT_LIST_DIR}/visitor/has_token.hpp
+    ${CMAKE_CURRENT_LIST_DIR}/visitor/is_node_empty.hpp
+    ${CMAKE_CURRENT_LIST_DIR}/visitor/render_node.hpp
+    ${CMAKE_CURRENT_LIST_DIR}/visitor/render_section.hpp
+    ${CMAKE_CURRENT_LIST_DIR}/mstch.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/render_context.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/template_type.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/token.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/utils.cpp
+    PARENT_SCOPE)

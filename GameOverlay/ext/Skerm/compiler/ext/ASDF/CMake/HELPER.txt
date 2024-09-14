@@ -1,0 +1,24 @@
+cmake_minimum_required(VERSION 3.5)
+
+function(ADD_ASDF_SOURCE var folder inc src)
+	source_group(${folder} FILES ${inc} ${src})
+	set(${var} ${${var}} ${inc} ${src} CACHE INTERNAL "")
+endfunction(ADD_ASDF_SOURCE)
+
+function(ADD_ASDF_LIBRARY var lib)
+	set(${var} ${${var}} ${lib} CACHE INTERNAL "")
+endfunction(ADD_ASDF_LIBRARY)
+
+function(ADD_ASDF_LIBRARIES var ext_lib)
+	set(${var} ${${var}} ${${ext_lib}} CACHE INTERNAL "")
+endfunction(ADD_ASDF_LIBRARIES)
+
+function(ADD_ASDF_INCLUDE_FOLDER var ext_inc)
+	set(${var} ${${var}} ${ext_inc} CACHE INTERNAL "")
+endfunction(ADD_ASDF_INCLUDE_FOLDER)
+
+function(ADD_ASDF_INCLUDE_FOLDERS var ext_inc)
+	set(${var} ${${var}} ${${ext_inc}} CACHE INTERNAL "")
+endfunction(ADD_ASDF_INCLUDE_FOLDERS)
+
+

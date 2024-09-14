@@ -1,0 +1,3 @@
+<Struct Name="MathBaseToken" As="Skerm::Token" AsHeader="skerm/tokens.hpp" AsVirtual="true">
+  <Item Name="Type" Type="MathTokenType" />
+</Struct>

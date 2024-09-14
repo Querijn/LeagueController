@@ -1,0 +1,3 @@
+[submodule "compiler/ext/ASDF"]
+	path = compiler/ext/ASDF
+	url = https://github.com/Querijn/ASDF.git

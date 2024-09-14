@@ -1,0 +1,64 @@
+{{#Struct}}
+#include <skerm/asdf_interpreter.hpp>
+#include <{{{Header}}}>
+
+namespace Skerm
+{
+	namespace ASDF
+	{
+		{{^As}}
+		{{Name}}::{{Name}}() :
+		{{#SerialisationOrder}}
+		{{^CameFromParent}}
+			{{Name}}(){{^Last}},{{/Last}}
+		{{/CameFromParent}}
+		{{/SerialisationOrder}}
+		{}
+
+		{{Name}}::{{Name}}(const {{Name}}Packed& a_Packed)
+		{
+		{{#SerialisationOrder}}
+			{{#IsArray}}
+			{{Name}}.resize(a_Packed.{{CountItem}});
+			for (uint32_t i = 0; i < a_Packed.{{CountItem}}; i++)
+				Convert({{Name}}[i], a_Packed.{{Name}}[i]);
+			{{/IsArray}}
+			{{^IsArray}}
+			Convert({{Name}}, a_Packed.{{Name}});
+			{{/IsArray}}
+		{{/SerialisationOrder}}
+		}
+
+		{{Name}}::{{Name}}(const {{Name}}& a_Copy)
+		{
+		{{#SerialisationOrder}}
+			{{Name}} = a_Copy.{{Name}};
+		{{/SerialisationOrder}}
+		}
+
+		{{Name}}& {{Name}}::operator=(const {{Name}}& a_Copy)
+		{
+		{{#SerialisationOrder}}
+			{{Name}} = a_Copy.{{Name}};
+		{{/SerialisationOrder}}
+
+			return *this;
+		}
+
+		void Convert({{Name}}& a_Target, const {{Name}}Packed& a_Other)
+		{
+		{{#SerialisationOrder}}
+			{{#IsArray}}
+			a_Target.{{Name}}.resize(a_Other.{{CountItem}});
+			for (uint32_t i = 0; i < a_Other.{{CountItem}}; i++)
+				Convert(a_Target.{{Name}}[i], a_Other.{{Name}}[i]);
+			{{/IsArray}}
+			{{^IsArray}}
+			Convert(a_Target.{{Name}}, a_Other.{{Name}});
+			{{/IsArray}}
+		{{/SerialisationOrder}}
+		}
+		{{/As}}
+	}
+}
+{{/Struct}}

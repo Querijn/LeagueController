@@ -1,0 +1,1 @@
+asdf --struct_folder "data/asdf" --include_dir "skerm/" --output_native "interpreter/inc/" "data/moustache/struct_header.mst" ".hpp"	--output_native "interpreter/src/" "data/moustache/struct_source.mst" ".cpp" --output_index "interpreter/inc/skerm/asdf.hpp" "data/moustache/index.mst" --output_index "interpreter/CMakeLists.txt" "data/moustache/cmake.mst"

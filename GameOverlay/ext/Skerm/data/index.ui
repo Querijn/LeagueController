@@ -1,0 +1,3 @@
+<Skerm Namespace="SkermTest" Version="v0.1">
+	<Container Name="Test1" Width="50%" Anchor="bottom, center" />
+</Skerm>

@@ -1,0 +1,77 @@
+#pragma once
+
+// Automatically generated ASDF file
+// Editing this is futile and lame
+// edit struct_header.mst instead
+
+{{#Struct}}
+{{#Headers}}
+#include <{{{.}}}>
+{{/Headers}}
+{{#AsHeader}}
+#include <{{{.}}}>
+{{/AsHeader}}
+{{#Declares}}
+#include <{{{Header}}}>
+{{/Declares}}
+#include <vector>
+#include <skerm/base_types.hpp>
+
+namespace Skerm
+{
+	namespace ASDF
+	{
+	#pragma pack(push, 1)
+		struct {{Name}}Packed
+		{
+			{{#SerialisationOrder}}{{#IsPointer}}using {{Name}}Ptr = ASDF::RelPtr<{{{Type}}}{{^IsPlain}}Packed{{/IsPlain}}, {{PointerSize}}, {{ElementSize}}>;{{/IsPointer}}{{/SerialisationOrder}}
+
+		{{#SerialisationOrder}}
+			{{#IsArray}}ASDF::Array<{{/IsArray}}{{#IsPointer}}{{Name}}Ptr{{/IsPointer}}{{^IsPointer}}{{{Type}}}{{^IsPlain}}Packed{{/IsPlain}}{{/IsPointer}}{{#IsArray}}>{{/IsArray}} {{Name}}{{#Value}} = {{.}}{{/Value}};
+		{{/SerialisationOrder}}
+		};
+	#pragma pack(pop)
+
+		{{^As}}
+		struct {{Name}}{{#Parent}} : public {{.}}{{/Parent}}
+		{
+			{{Name}}();
+			{{Name}}(const {{Name}}Packed& a_Packed);
+			{{Name}}(const {{Name}}& a_Copy);
+			{{Name}}& operator=(const {{Name}}& a_Copy);
+
+		{{#SerialisationOrder}}
+		{{^CameFromParent}}
+			{{#IsArray}}std::vector<{{/IsArray}}{{#IsPointer}}std::shared_ptr<{{/IsPointer}}{{#MemberAs}}{{.}}{{/MemberAs}}{{^MemberAs}}{{{Type}}}{{/MemberAs}}{{#IsPointer}}>{{/IsPointer}}{{#IsArray}}>{{/IsArray}} {{Name}}{{#Value}} = {{.}}{{/Value}};
+		{{/CameFromParent}}
+		{{/SerialisationOrder}}
+		};
+		
+		void Convert({{Name}}& a_Target, const {{Name}}Packed& a_Other);
+		{{/As}}
+		{{#As}}
+		using {{Name}} = {{.}};
+		{{/As}}
+	}
+}
+{{/Struct}}
+{{#Enum}}
+
+#include <cstdint>
+
+namespace Skerm
+{
+	namespace ASDF
+	{
+	#pragma pack(push, 1)
+		enum {{Name}} : uint32_t
+		{
+		{{#Items}}
+			{{Name}}{{^Last}},{{/Last}}
+		{{/Items}}
+		};
+		using {{Name}}Packed = {{Name}};
+	#pragma pack(pop)
+	}
+}
+{{/Enum}}

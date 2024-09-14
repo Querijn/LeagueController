@@ -1,0 +1,745 @@
+{
+    "id": 895,
+    "name": "Nilah",
+    "key": "Nilah",
+    "roles": [
+        "bot"
+    ],
+    "forms": [
+        {
+            "name": "",
+            "icon": "Nilah",
+            "skills": [
+                {
+                    "key": "A",
+                    "level": {
+                        "start": 1,
+                        "max": 1,
+                        "requirement": [
+                            1
+                        ]
+                    },
+                    "transform": "none",
+                    "components": [
+                        {
+                            "name": "Basic Attack",
+                            "conditions": [],
+                            "description": "Deals <physicalDamage>@TotalDamage@ physical damage<\/physicalDamage>.",
+                            "scaling": [
+                                {
+                                    "label": "TotalDamage",
+                                    "formula": "@totalAttackDamage@",
+                                    "components": [
+                                        {
+                                            "label": "totalAttackDamage",
+                                            "value": [
+                                                1
+                                            ],
+                                            "scaling": [
+                                                "self",
+                                                "attackDamage",
+                                                "total"
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ],
+                            "cost": {
+                                "label": "",
+                                "formula": "0",
+                                "components": []
+                            },
+                            "range": {
+                                "label": "Range",
+                                "formula": "@attackRange@+@gameplayRadius@",
+                                "components": [
+                                    {
+                                        "label": "attackRange",
+                                        "value": [
+                                            1
+                                        ],
+                                        "scaling": [
+                                            "self",
+                                            "attackRange",
+                                            "total"
+                                        ]
+                                    },
+                                    {
+                                        "label": "gameplayRadius",
+                                        "value": [
+                                            1
+                                        ],
+                                        "scaling": [
+                                            "self",
+                                            "gameplayRadius",
+                                            "total"
+                                        ]
+                                    }
+                                ]
+                            },
+                            "cooldown": {
+                                "label": "",
+                                "formula": "1\/@totalAttackSpeed@",
+                                "components": [
+                                    {
+                                        "label": "totalAttackSpeed",
+                                        "value": [
+                                            1
+                                        ],
+                                        "scaling": [
+                                            "self",
+                                            "attackSpeed",
+                                            "total"
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "P",
+                    "level": {
+                        "start": 1,
+                        "max": 1,
+                        "requirement": [
+                            1
+                        ]
+                    },
+                    "transform": "none",
+                    "components": [
+                        {
+                            "name": "Joy Unending",
+                            "conditions": [],
+                            "description": "Nilah gains increased experience from last-hitting minions along with the ability to enhance and share nearby healing and shielding from her allies.",
+                            "scaling": [],
+                            "cost": {
+                                "label": "",
+                                "formula": "0",
+                                "components": []
+                            },
+                            "range": {
+                                "label": "Range",
+                                "formula": "1000 + @gameplayRadius@",
+                                "components": [
+                                    {
+                                        "label": "gameplayRadius",
+                                        "value": [
+                                            1
+                                        ],
+                                        "scaling": [
+                                            "self",
+                                            "gameplayRadius",
+                                            "total"
+                                        ]
+                                    }
+                                ]
+                            },
+                            "cooldown": {
+                                "label": "Cooldown",
+                                "formula": "0",
+                                "components": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "Q",
+                    "level": {
+                        "start": 0,
+                        "max": 5,
+                        "requirement": [
+                            1,
+                            3,
+                            5,
+                            7,
+                            9
+                        ]
+                    },
+                    "transform": "none",
+                    "components": [
+                        {
+                            "name": "Formless Blade",
+                            "conditions": [],
+                            "description": "<spellPassive>Passive:<\/spellPassive> Nilah gains @CritArmorPen@ Armor Penetration, and her Attacks against champions restore <healing>@CritLifesteal@ damage dealt as Health<\/healing>. Overhealing from this is converted into a <shield>Shield<\/shield> for 6 seconds.<br><br><spellActive>Active:<\/spellActive> Nilah cracks her whip-blade, dealing <physicalDamage>@DamageCalc@ physical damage<\/physicalDamage>, increased by her Critical Strike Chance. If an enemy unit or structure is hit, Nilah gains 125 Attack Range and <attackSpeed>@BonusAttackSpeedCalc@% Attack Speed<\/attackSpeed>, and her Attacks hit in a cone as <physicalDamage>@AttackTotalDamageTooltip@ physical damage<\/physicalDamage> for 4 seconds.<br>@SpellModifierDescriptionAppend@",
+                            "scaling": [
+                                {
+                                    "label": "CritArmorPen",
+                                    "formula": "@base@",
+                                    "components": []
+                                },
+                                {
+                                    "label": "CritLifesteal",
+                                    "formula": "@base@",
+                                    "components": []
+                                },
+                                {
+                                    "label": "DamageCalc",
+                                    "formula": "@base@",
+                                    "components": []
+                                },
+                                {
+                                    "label": "BonusAttackSpeedCalc",
+                                    "formula": "@base@",
+                                    "components": []
+                                },
+                                {
+                                    "label": "AttackTotalDamageTooltip",
+                                    "formula": "@base@",
+                                    "components": []
+                                },
+                                {
+                                    "label": "SpellModifierDescriptionAppend",
+                                    "formula": "@base@",
+                                    "components": []
+                                }
+                            ],
+                            "cost": {
+                                "label": "Cost",
+                                "formula": "@base@",
+                                "components": [
+                                    {
+                                        "label": "base",
+                                        "value": [
+                                            30,
+                                            30,
+                                            30,
+                                            30,
+                                            30
+                                        ],
+                                        "scaling": [
+                                            "self",
+                                            "skillLevelQ",
+                                            "current"
+                                        ]
+                                    }
+                                ]
+                            },
+                            "range": {
+                                "label": "Range",
+                                "formula": "@base@ + @gameplayRadius@",
+                                "components": [
+                                    {
+                                        "label": "base",
+                                        "value": [
+                                            600,
+                                            600,
+                                            600,
+                                            600,
+                                            600
+                                        ],
+                                        "scaling": [
+                                            "self",
+                                            "skillLevelQ",
+                                            "current"
+                                        ]
+                                    },
+                                    {
+                                        "label": "gameplayRadius",
+                                        "value": [
+                                            1
+                                        ],
+                                        "scaling": [
+                                            "self",
+                                            "gameplayRadius",
+                                            "total"
+                                        ]
+                                    }
+                                ]
+                            },
+                            "cooldown": {
+                                "label": "Cooldown",
+                                "formula": "@base@*100\/(100+@AbilityHaste@)",
+                                "components": [
+                                    {
+                                        "label": "base",
+                                        "value": [
+                                            4,
+                                            4,
+                                            4,
+                                            4,
+                                            4
+                                        ],
+                                        "scaling": [
+                                            "self",
+                                            "skillLevelQ",
+                                            "current"
+                                        ]
+                                    },
+                                    {
+                                        "label": "AbilityHaste",
+                                        "value": [
+                                            1
+                                        ],
+                                        "scaling": [
+                                            "self",
+                                            "abilityHaste",
+                                            "total"
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "W",
+                    "level": {
+                        "start": 0,
+                        "max": 5,
+                        "requirement": [
+                            1,
+                            3,
+                            5,
+                            7,
+                            9
+                        ]
+                    },
+                    "transform": "none",
+                    "components": [
+                        {
+                            "name": "Jubilant Veil",
+                            "conditions": [],
+                            "description": "Nilah envelops herself in mist for @BaseDuration@ seconds, becoming Ghosted, gaining <speed>@MoveSpeedPercent*100@% Move Speed<\/speed>, dodging Attacks, and reducing <magicDamage>magic damage<\/magicDamage> taken by @MagicDamageReduction*100@%.<br><br>While active, touching allied champions envelops them in mist, granting the same benefits for @ShareBaseDuration@ seconds.<br>@SpellModifierDescriptionAppend@",
+                            "scaling": [
+                                {
+                                    "label": "BaseDuration",
+                                    "formula": "@base@",
+                                    "components": []
+                                },
+                                {
+                                    "label": "MoveSpeedPercent",
+                                    "formula": "@base@",
+                                    "components": []
+                                },
+                                {
+                                    "label": "MagicDamageReduction",
+                                    "formula": "@base@",
+                                    "components": []
+                                },
+                                {
+                                    "label": "ShareBaseDuration",
+                                    "formula": "@base@",
+                                    "components": []
+                                },
+                                {
+                                    "label": "SpellModifierDescriptionAppend",
+                                    "formula": "@base@",
+                                    "components": []
+                                }
+                            ],
+                            "cost": {
+                                "label": "Cost",
+                                "formula": "@base@",
+                                "components": [
+                                    {
+                                        "label": "base",
+                                        "value": [
+                                            60,
+                                            45,
+                                            30,
+                                            15,
+                                            0
+                                        ],
+                                        "scaling": [
+                                            "self",
+                                            "skillLevelW",
+                                            "current"
+                                        ]
+                                    }
+                                ]
+                            },
+                            "range": {
+                                "label": "Range",
+                                "formula": "@base@ + @gameplayRadius@",
+                                "components": [
+                                    {
+                                        "label": "base",
+                                        "value": [
+                                            150,
+                                            150,
+                                            150,
+                                            150,
+                                            150
+                                        ],
+                                        "scaling": [
+                                            "self",
+                                            "skillLevelW",
+                                            "current"
+                                        ]
+                                    },
+                                    {
+                                        "label": "gameplayRadius",
+                                        "value": [
+                                            1
+                                        ],
+                                        "scaling": [
+                                            "self",
+                                            "gameplayRadius",
+                                            "total"
+                                        ]
+                                    }
+                                ]
+                            },
+                            "cooldown": {
+                                "label": "Cooldown",
+                                "formula": "@base@*100\/(100+@AbilityHaste@)",
+                                "components": [
+                                    {
+                                        "label": "base",
+                                        "value": [
+                                            26,
+                                            25,
+                                            24,
+                                            23,
+                                            22
+                                        ],
+                                        "scaling": [
+                                            "self",
+                                            "skillLevelW",
+                                            "current"
+                                        ]
+                                    },
+                                    {
+                                        "label": "AbilityHaste",
+                                        "value": [
+                                            1
+                                        ],
+                                        "scaling": [
+                                            "self",
+                                            "abilityHaste",
+                                            "total"
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "E",
+                    "level": {
+                        "start": 0,
+                        "max": 5,
+                        "requirement": [
+                            1,
+                            3,
+                            5,
+                            7,
+                            9
+                        ]
+                    },
+                    "transform": "none",
+                    "components": [
+                        {
+                            "name": "Slipstream",
+                            "conditions": [],
+                            "description": "Nilah dashes through a unit, dealing <physicalDamage>@DashDamage@ physical damage<\/physicalDamage> to any enemies she passes through.@SpellModifierDescriptionAppend@",
+                            "scaling": [
+                                {
+                                    "label": "DashDamage",
+                                    "formula": "@base@",
+                                    "components": []
+                                },
+                                {
+                                    "label": "SpellModifierDescriptionAppend",
+                                    "formula": "@base@",
+                                    "components": []
+                                }
+                            ],
+                            "cost": {
+                                "label": "Cost",
+                                "formula": "@base@",
+                                "components": [
+                                    {
+                                        "label": "base",
+                                        "value": [
+                                            40,
+                                            40,
+                                            40,
+                                            40,
+                                            40
+                                        ],
+                                        "scaling": [
+                                            "self",
+                                            "skillLevelE",
+                                            "current"
+                                        ]
+                                    }
+                                ]
+                            },
+                            "range": {
+                                "label": "Range",
+                                "formula": "@base@",
+                                "components": [
+                                    {
+                                        "label": "base",
+                                        "value": [
+                                            550,
+                                            550,
+                                            550,
+                                            550,
+                                            550
+                                        ],
+                                        "scaling": [
+                                            "self",
+                                            "skillLevelE",
+                                            "current"
+                                        ]
+                                    }
+                                ]
+                            },
+                            "cooldown": {
+                                "label": "Cooldown",
+                                "formula": "@base@*100\/(100+@AbilityHaste@)",
+                                "components": [
+                                    {
+                                        "label": "base",
+                                        "value": [
+                                            0.5,
+                                            0.5,
+                                            0.5,
+                                            0.5,
+                                            0.5
+                                        ],
+                                        "scaling": [
+                                            "self",
+                                            "skillLevelE",
+                                            "current"
+                                        ]
+                                    },
+                                    {
+                                        "label": "AbilityHaste",
+                                        "value": [
+                                            1
+                                        ],
+                                        "scaling": [
+                                            "self",
+                                            "abilityHaste",
+                                            "total"
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "key": "R",
+                    "level": {
+                        "start": 0,
+                        "max": 3,
+                        "requirement": [
+                            6,
+                            11,
+                            16
+                        ]
+                    },
+                    "transform": "none",
+                    "components": [
+                        {
+                            "name": "Apotheosis",
+                            "conditions": [],
+                            "description": "Nilah whirls her whip-blade, dealing <physicalDamage>@DamagePerTickCalcTooltip@ physical damage<\/physicalDamage> over 1 second, then finishes with a burst of <physicalDamage>@DamageCalc@ physical damage<\/physicalDamage> that also <status>Pulls<\/status> nearby enemies toward her.<br><br>Nilah heals herself and nearby allies by <healing>@ChampHealingPercent*100@% + @spell.NilahQ:CritLifesteal@ of her damage dealt to enemy champions' Health (@OtherHealingPercent*100@% for non-champions)<\/healing>, converting any overhealing into a <shield>Shield<\/shield> for @Duration@ seconds.<br>@SpellModifierDescriptionAppend@",
+                            "scaling": [
+                                {
+                                    "label": "DamagePerTickCalcTooltip",
+                                    "formula": "@base@",
+                                    "components": []
+                                },
+                                {
+                                    "label": "DamageCalc",
+                                    "formula": "@base@",
+                                    "components": []
+                                },
+                                {
+                                    "label": "ChampHealingPercent",
+                                    "formula": "@base@",
+                                    "components": []
+                                },
+                                {
+                                    "label": "spell",
+                                    "formula": "@base@",
+                                    "components": []
+                                },
+                                {
+                                    "label": "OtherHealingPercent",
+                                    "formula": "@base@",
+                                    "components": []
+                                },
+                                {
+                                    "label": "Duration",
+                                    "formula": "@base@",
+                                    "components": []
+                                },
+                                {
+                                    "label": "SpellModifierDescriptionAppend",
+                                    "formula": "@base@",
+                                    "components": []
+                                }
+                            ],
+                            "cost": {
+                                "label": "Cost",
+                                "formula": "@base@",
+                                "components": [
+                                    {
+                                        "label": "base",
+                                        "value": [
+                                            80,
+                                            80,
+                                            80,
+                                            80,
+                                            80
+                                        ],
+                                        "scaling": [
+                                            "self",
+                                            "skillLevelR",
+                                            "current"
+                                        ]
+                                    }
+                                ]
+                            },
+                            "range": {
+                                "label": "Range",
+                                "formula": "@base@",
+                                "components": [
+                                    {
+                                        "label": "base",
+                                        "value": [
+                                            450,
+                                            450,
+                                            450,
+                                            450,
+                                            450
+                                        ],
+                                        "scaling": [
+                                            "self",
+                                            "skillLevelR",
+                                            "current"
+                                        ]
+                                    }
+                                ]
+                            },
+                            "cooldown": {
+                                "label": "Cooldown",
+                                "formula": "@base@*100\/(100+@AbilityHaste@)",
+                                "components": [
+                                    {
+                                        "label": "base",
+                                        "value": [
+                                            110,
+                                            95,
+                                            80
+                                        ],
+                                        "scaling": [
+                                            "self",
+                                            "skillLevelR",
+                                            "current"
+                                        ]
+                                    },
+                                    {
+                                        "label": "AbilityHaste",
+                                        "value": [
+                                            1
+                                        ],
+                                        "scaling": [
+                                            "self",
+                                            "abilityHaste",
+                                            "total"
+                                        ]
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ],
+            "stats": {
+                "health": {
+                    "flat": 570,
+                    "percent": 0,
+                    "perLevel": 101,
+                    "percentPerLevel": 0
+                },
+                "healthRegen": {
+                    "flat": 4,
+                    "percent": 0,
+                    "perLevel": 0.18,
+                    "percentPerLevel": 0
+                },
+                "mana": {
+                    "flat": 350,
+                    "percent": 0,
+                    "perLevel": 35,
+                    "percentPerLevel": 0
+                },
+                "manaRegen": {
+                    "flat": 8.18,
+                    "percent": 0,
+                    "perLevel": 0.7,
+                    "percentPerLevel": 0
+                },
+                "armor": {
+                    "flat": 27,
+                    "percent": 0,
+                    "perLevel": 4.2,
+                    "percentPerLevel": 0
+                },
+                "magicResistance": {
+                    "flat": 32,
+                    "percent": 0,
+                    "perLevel": 2.05,
+                    "percentPerLevel": 0
+                },
+                "attackDamage": {
+                    "flat": 58,
+                    "percent": 0,
+                    "perLevel": 2,
+                    "percentPerLevel": 0
+                },
+                "attackRange": {
+                    "flat": 225,
+                    "percent": 0,
+                    "perLevel": 0,
+                    "percentPerLevel": 0
+                },
+                "gameplayRadius": {
+                    "flat": 65,
+                    "percent": 0,
+                    "perLevel": 0,
+                    "percentPerLevel": 0
+                },
+                "criticalStrikeDamage": {
+                    "flat": 200,
+                    "percent": 0,
+                    "perLevel": 0,
+                    "percentPerLevel": 0
+                },
+                "criticalStrikeDamageModifier": {
+                    "flat": 1,
+                    "percent": 0,
+                    "perLevel": 0,
+                    "percentPerLevel": 0
+                },
+                "attackSpeed": {
+                    "flat": 0.697,
+                    "percent": 0,
+                    "perLevel": 0,
+                    "percentPerLevel": 0
+                },
+                "attackSpeedBonus": {
+                    "flat": 0.67,
+                    "percent": 0,
+                    "perLevel": 0,
+                    "percentPerLevel": 3
+                },
+                "movementSpeed": {
+                    "flat": 340,
+                    "percent": 0,
+                    "perLevel": 0,
+                    "percentPerLevel": 0
+                }
+            }
+        }
+    ]
+}

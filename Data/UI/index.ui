@@ -1,0 +1,7 @@
+<Skerm Namespace="SkermTest" Version="v0.1">
+  <Container Name="Window" Width="100%" Height="100%" Anchor="center" Color="[ 0.4, 0.4, 0.4 ]">
+    <Container Name="TopBar" Width="100%" Height="20" Anchor="top" Color="[ 0.2, 0.2, 0.2 ]">
+      <Text Name="NewText" Content="LeagueController" Left="30" FontSize="90%" FontFile="data/fonts/arial.ttf" Height="100%"/>
+    </Container>
+  </Container>
+</Skerm>

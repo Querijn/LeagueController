@@ -1,0 +1,6 @@
+<Skerm Namespace="RadialMenu" Version="v0.1">
+  <Container Name="Window" Width="100%" Height="100%" Anchor="center">
+    <!--<Image Name="NewImage" Source="minimap.png" Width="50%" Height="50%" />-->
+    <Text Name="Text" Content="" Width="w" Height="h" Anchor="center" FontFile="data/fonts/arial.ttf"/>
+  </Container>
+</Skerm>

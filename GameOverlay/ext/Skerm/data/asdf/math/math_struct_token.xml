@@ -1,0 +1,4 @@
+<Struct Name="MathStructToken" Extends="MathBaseToken" As="Skerm::StructToken" AsHeader="skerm/tokens.hpp">
+  <Item Name="Tokens" Type="MathBaseToken" IsArray="true" IsPointer="true" />
+  <Item Name="TokenCount" Type="uint8_t" IsArrayCountFor="Tokens" />
+</Struct>

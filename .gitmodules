@@ -1,0 +1,9 @@
+[submodule "GameOverlay/ext/Skerm"]
+	path = GameOverlay/ext/Skerm
+	url = https://github.com/Querijn/Skerm.git
+[submodule "ext/tracy"]
+	path = ext/tracy
+	url = https://github.com/wolfpld/tracy/
+[submodule "data/lolstaticdata"]
+	path = data/lolstaticdata
+	url = https://github.com/LxWing/lolstaticdata.git

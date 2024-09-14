@@ -1,0 +1,35 @@
+cmake_minimum_required(VERSION 3.17)
+project(Sokol)
+
+set(SOKOL_SOURCES "" CACHE INTERNAL "Sokol source files")
+
+ADD_SRC(SOKOL_SOURCES		"Sokol"			"ext/sokol/sokol_app.h"						"")
+ADD_SRC(SOKOL_SOURCES		"Sokol"			"ext/sokol/sokol_audio.h"					"")
+ADD_SRC(SOKOL_SOURCES		"Sokol"			"ext/sokol/sokol_gfx.h"						"")
+ADD_SRC(SOKOL_SOURCES		"Sokol"			"ext/sokol/util/sokol_gl.h"					"")
+ADD_SRC(SOKOL_SOURCES		"Sokol"			"ext/sokol/sokol_glue.h"					"")
+ADD_SRC(SOKOL_SOURCES		"Sokol"			"inc/sokol.hpp"								"")
+ADD_SRC(SOKOL_SOURCES		"Sokol"			"src/main.cpp"								"")
+
+add_library(Sokol ${SOKOL_SOURCES})
+
+target_include_directories(Sokol PUBLIC "inc")
+target_include_directories(Sokol PUBLIC "ext/sokol")
+target_include_directories(Sokol PUBLIC "ext/sokol/util")
+
+if (WIN32)
+	# target_compile_definitions(Sokol PUBLIC SOKOL_GLCORE33)
+	target_compile_definitions(Sokol PUBLIC SOKOL_D3D11)
+else (EMSCRIPTEN)
+	target_compile_definitions(Sokol PUBLIC SOKOL_GLES2)
+endif ()
+
+if (EMSCRIPTEN)
+	set(SOKOL_FLAGS "" CACHE INTERNAL "Sokol LINK FLAGS")
+	if (CMAKE_BUILD_TYPE EQUAL "DEBUG")
+		set(${SOKOL_FLAGS} ${SOKOL_FLAGS} "-g4-s SAFE_HEAP=1 -s WARN_UNALIGNED=1 -fsanitize=undefined")
+	else ()
+		set(${SOKOL_FLAGS} ${SOKOL_FLAGS} "-O2 --closure 1")
+	endif ()
+	set_target_properties(Sokol PROPERTIES LINK_FLAGS ${SOKOL_FLAGS} "-s FULL_ES2=1 -s DISABLE_EXCEPTION_CATCHING=2 -s MINIMAL_RUNTIME -lwebgl.js -s ALLOW_MEMORY_GROWTH=1 -std=c++17")
+endif ()

@@ -1,0 +1,28 @@
+<Skerm Namespace="ControllerUI" Version="v0.1">
+  <Container Name="Controller" Width="100%" Height="100%" Anchor="center" Color="0">
+    <Image Name="Background" Source="Data/controller_bg.png" Width="100%" Height="100%" />
+    <Image Name="Button A" Source="Data/button_A.png" Width="0.08w" Height="0.08w" Right="20%" Top="39%" />
+    <Image Name="Button B" Source="Data/button_B.png" Width="0.08w" Height="0.08w" Right="14%" Top="31%" />
+    <Image Name="Button X" Source="Data/button_X.png" Width="0.08w" Height="0.08w" Right="26%" Top="31%" />
+    <Image Name="Button Y" Source="Data/button_Y.png" Width="0.08w" Height="0.08w" Right="20%" Top="23%" />
+    
+    <Image Name="Dpad Down" Source="Data/dpad_Down.png" Width="0.1w" Height="0.1w" Left="17%" Top="34%" />
+    <Image Name="Dpad Up" Source="Data/dpad_Up.png" Width="0.1w" Height="0.1w" Left="17%" Top="30%" />
+    <Image Name="Dpad Left" Source="Data/dpad_Left.png" Width="0.1w" Height="0.1w" Left="15%" Top="32%" />
+    <Image Name="Dpad Right" Source="Data/dpad_Right.png" Width="0.1w" Height="0.1w" Left="19%" Top="32%" />
+
+    <Image Name="Analog Right" Source="Data/analog_Right.png" Width="0.13w" Height="0.13w" Right="31%" Bottom="38%" />
+    <Image Name="Analog Left" Source="Data/analog_Left.png" Width="0.13w" Height="0.13w" Left="31%" Bottom="38%" />
+
+    <Image Name="Left Trigger" Source="Data/trigger_Left.png" Width="0.07w" Height="0.07w" Left="17%" Top="12%" />
+    <Image Name="Left Button" Source="Data/button_Left.png" Width="0.07w" Height="0.07w" Left="22%" Top="12%" />
+
+    <Image Name="Right Trigger" Source="Data/trigger_Right.png" Width="0.07w" Height="0.07w" Right="18%" Top="12%" />
+    <Image Name="Right Button" Source="Data/button_Right.png" Width="0.07w" Height="0.07w" Right="24%" Top="12%" />
+
+    <Image Name="Start" Source="Data/start.png" Width="0.07w" Height="0.07w" Right="32%" Top="22%" />
+    <Image Name="Select" Source="Data/select.png" Width="0.07w" Height="0.07w" Left="32%" Top="22%" />
+    
+  </Container>
+
+</Skerm>

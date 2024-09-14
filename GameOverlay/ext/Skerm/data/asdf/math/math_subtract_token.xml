@@ -1,0 +1,2 @@
+<Struct Name="MathSubtractionToken" Extends="MathBaseToken" As="Skerm::SubtractionToken" AsHeader="skerm/tokens.hpp">
+</Struct>

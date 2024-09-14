@@ -1,0 +1,5 @@
+<Enum Name="UIType">
+  <Item Name="ContainerType" Value="0" />
+  <Item Name="ImageType" />
+  <Item Name="TextType" />
+</Enum>

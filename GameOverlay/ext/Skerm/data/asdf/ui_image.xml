@@ -1,0 +1,4 @@
+<Struct Name="UIImage" Extends="UIContainer">
+  <Item Name="Source" Type="String" />
+  <Item Name="Sprite" Type="MathEquationToken" />
+</Struct>

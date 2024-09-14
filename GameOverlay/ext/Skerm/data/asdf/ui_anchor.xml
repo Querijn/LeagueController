@@ -1,0 +1,13 @@
+<Enum Name="UIAnchor">
+  <Item Name="TopLeft" Value="0" />
+  <Item Name="TopCenter" />
+  <Item Name="TopRight" />
+
+  <Item Name="MiddleLeft" />
+  <Item Name="MiddleCenter" />
+  <Item Name="MiddleRight" />
+
+  <Item Name="BottomLeft" />
+  <Item Name="BottomCenter" />
+  <Item Name="BottomRight" />
+</Enum>

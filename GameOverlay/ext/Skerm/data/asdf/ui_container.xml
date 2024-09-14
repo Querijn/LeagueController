@@ -1,0 +1,14 @@
+<Struct Name="UIContainer">
+  <Item Name="Type" Type="UIType" />
+  <Item Name="Left" Type="MathEquationToken" />
+  <Item Name="Right" Type="MathEquationToken" />
+  <Item Name="Top" Type="MathEquationToken" />
+  <Item Name="Bottom" Type="MathEquationToken" />
+  <Item Name="Color" Type="MathEquationToken" />
+  
+  <Item Name="Anchor" Type="UIAnchor" />
+  <Item Name="Name" Type="String" />
+  
+  <Item Name="Children" Type="UIContainer" IsArray="true" IsPointer="true" />
+  <Item Name="ChildCount" Type="uint32_t" IsArrayCountFor="Children" />
+</Struct>

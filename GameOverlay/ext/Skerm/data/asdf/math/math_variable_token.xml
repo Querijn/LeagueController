@@ -1,0 +1,4 @@
+<Struct Name="MathVariableToken" Extends="MathBaseToken" As="Skerm::ValueVariableToken" AsHeader="skerm/tokens.hpp">
+  <Item Name="Value" Type="double" Value="1.0" />
+  <Item Name="Variable" Type="String" />
+</Struct>

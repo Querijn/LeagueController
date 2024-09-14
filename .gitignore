@@ -1,0 +1,16 @@
+﻿Common/ext/glm/cmake
+Common/ext/glm/doc
+Common/ext/glm/test
+Common/ext/glm/util
+LeagueController/ext/leaguelib/data
+Old
+gen_nodes.bat
+LeagueController.txt
+imgui.ini
+settings.json
+char_debug_*.png
+font_debug.png
+font_bitmap_test.png
+LeagueControllerRuntime.dll
+Releases
+logs
